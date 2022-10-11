@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title"><h1>Login Page</h1></div>
+      <br />
+      <select id="usertype">
+        <option placeholder="Select User Type" selected>
+          Select User Type
+        </option>
+        <option value="Admin">Admin</option>
+        <option value="Employee">Employee</option></select
+      ><br /><br />
+      <div class="input-box underline">
+        <input type="text" placeholder="Enter Your Email" id="email" required />
+        <div class="underline"></div>
+      </div>
+      <br />
+      <div class="input-box">
+        <input
+          type="password"
+          placeholder="Enter Your Password"
+          id="pass"
+          required
+        />
+        <div class="underline"></div>
+      </div>
+      <br />
+      <div class="input-box button">
+        <button type="submit" name="" class="btn" id="btn" onClick="login()">
+          Login
+        </button>
+      </div>
+      <br />
+    </div>
+
+    <script src="login.js"></script>
+  </body>
+</html>

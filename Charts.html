@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Visual Data</title>
+    <link rel="stylesheet" href="charts.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+  </head>
+  <body onload="workbreaksGraph()">
+    <script>
+      function workbreaksGraph() {
+        var work = document.workbreaksForm.work.value,
+          breaks = document.workbreaksForm.breaks.value,
+          meeting = document.workbreaksForm.meeting.value,
+          ctx = document
+            .getElementById("workbreaksmeetingratio")
+            .getContext("2d");
+        var data = {
+          labels: ["work", "breaks", "meeting"],
+          datasets: [
+            {
+              data: [work, breaks, meeting],
+              backgroundColor: ["#EF0000", "#0000EF", "#094162e5"],
+              hoverBackgroundColor: ["#FF0000", "#0000FF", "#182d6e"],
+            },
+          ],
+        };
+        var options = {};
+        var myPieChart = new Chart(ctx, {
+          type: "pie",
+          data: data,
+          options: options,
+        });
+      }
+    </script>
+    <h1>Employee Visual Data</h1>
+    <form name="workbreaksForm" class="mainhead" method="post">
+      <label id="input_text"> Work : </label>
+      <input type="number" id="value_input" name="work" value="100" />
+      <br /><br />
+      <label id="input_text"> Breaks: </label>
+      <input type="number" id="value_input" name="breaks" value="100" />
+      <br /><br />
+      <label id="input_text"> Meetings : </label>
+      <input type="number" id="value_input" name="meeting" value="100" />
+      <br /><br />
+      <button type="button" onclick="workbreaksGraph();">Update</button>
+      <h1>Pie graph</h1>
+      <canvas id="workbreaksmeetingratio" height="100"></canvas>
+    </form>
+  </body>
+</html>
